@@ -6,7 +6,9 @@ print('Please ingress your iota seed:')
 seed = input()
 
 print('Please ingress the address of the node:')
+
 api = Iota(input(), seed)
+
 
 # We want the first address for this seed (index 0), make sure it hasn't been spent from before!
 
