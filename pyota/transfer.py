@@ -9,10 +9,10 @@ from iota import TryteString
 seed = 'HLXQDU9SBFHEWIAFGGKGZTHJRMDFBWDKEQFZJHFSJZTSJ9ZUDDNDMBHTGVD9BMZLVTGGVERJCZSAITQZW'
 
 monto =  int(input())
-api = Iota('https://nodes.devnet.iota.org:443', seed)
+api = Iota(input(), seed)
 
 # The address to send 1i
-address = 'VHFOCLDDYSSKKDRFWQFOWGKIFSQDNKLFMWPKWL9ENU9DFPVDOWCMOVZHUMIKYAEZLKRXRAZMEFELZVWTXESMPHQZWX'
+address = 'RBXXOAPRWTIUWZCFNKNGGRDOVTUAVAITRIAOFCACTOONOTPUKIFFJHELJBNX9KVBVMBDKTINSFJNMSDLWXHDFMDXNC'
 
 
 tx = ProposedTransaction(
@@ -24,7 +24,7 @@ tx = ProposedTransaction(
 
 tx = api.prepare_transfer(transfers=[tx])
 
-result = api.send_trytes(tx['trytes'], depth=3, min_weight_magnitude=9)
+result = api.send_trytes(tx['trytes'], depth=3, min_weight_magnitude=10)
 
 print('Transaction sent to the tangle!')
 print('https://devnet.thetangle.org/address/%s' % address)
