@@ -8,7 +8,8 @@ from iota.crypto.types import Seed
 seed = Seed.random()
 print('Your seed is' ,seed)
 
-api = Iota('http://localhost:14265', seed, testnet = True)
+api = Iota('http://localhost:14265', seed)
+
 security_level = 2
 address = api.get_new_addresses(index=0, count=1, security_level = security_level)['addresses'][0]
 
@@ -19,11 +20,4 @@ if is_spent:
 else:
     print('Your address is: %s' % address )
 
-tx = ProposedTransaction(
-address=Address(address),
-value = 1
-)
 
-result = api.send_transfer(transfers=[tx] )
-print('Bundle: ')
-print(result['bundle'])
