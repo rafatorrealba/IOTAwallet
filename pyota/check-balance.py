@@ -6,10 +6,17 @@ from iota import Iota
 import pprint
 
 # This is a demonstration seed, always generate your own seed!
-seed1 = 'PKJLCEGBFVJMFKNPIWJE9TT9BYTBMRGVPFAKLHWYBXJQHYKZHEFYSSARDRJGQSSEAACGARFGEGBQXI9MT'
-seed2 = 'DMSGOXLIHJESEOOP9LLPVXVGUTCV9JZZMSAYYXUFMG9GBGQIJEESVAEFXRC9EAOPL9UCUQOEKVLUBJJRS'
+seed1 = 'BLICFZQCUKH9YDPYKXLQFQNTUAEINQSB9NASLCMBQ99ICLQOPZCFFIQRJGXXVSFHKZSO9WLLZAGDUGADX'
+seed2 = '9JQCUTFBAMVBSNYIGBAUCCEFABCNNFMMLYIJ9RAXZNSTCKDVSESTGXIXCCUFEGRVHA9YNLITFDZQZUFRW'
 
-api = Iota('http://localhost:14265', seed2)
+api1 = Iota('http://localhost:14265', seed1)
+api2 = Iota('http://localhost:14265', seed2)
 
-print('\nThe balance for your seed:\n')
-pprint.pprint(api.get_account_data())
+
+balance1 = api1.get_account_data()
+print('The balance of th wallet1 is: ', balance1['balance'])
+
+
+balance2= api2.get_account_data()
+
+print('The balance of th wallet2 is: ', balance2['balance'])
