@@ -11,7 +11,7 @@ node2 = 'http://localhost:14265'
 seed = Seed.random()
 print('Your seed is' , seed)
 
-api = Iota(node2, seed, testnet = True)
+api = Iota(node1, seed, testnet = True)
 security_level = 2
 address = api.get_new_addresses(index=0, count=1, security_level = security_level)['addresses'][0]
 
